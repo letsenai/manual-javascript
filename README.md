@@ -34,9 +34,7 @@ JavaScript = comportamento e interatividade
 
 ꒰ ✉︎ ꒱ Pasta: ``` 01_script_no_html ```
 
-HTML
-
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,17 +55,16 @@ function mostrarMensagem() {
 </body>
 </html>
 ```
+
 ### JavaScript em arquivo separado
 
 ꒰ ✉︎ ꒱ Pasta: ``` 02_script_externo ```
 
-HTML
-
-```
+```html
 <script src="script.js"></script>
+```
 
-JavaScript (script.js):
-
+```javascript
 function mostrarMensagem() {
   alert("Hello World!");
 }
@@ -77,14 +74,14 @@ function mostrarMensagem() {
 
 ### O que é uma variável?
 
-É uma caixinha onde você guarda informações na memória, usado para armazenar um valor.
+É um espaço na memória usado para armazenar um valor que pode ser utilizado no programa.
 
 ### Declaração de variáveis
 
-```
+```javascript
 var nome = "Ewerton";
-let idade = 20;
-const cidade = "Santa Catarina";
+let idade = 27;
+const curso = "DS";
 ```
 
 ### Diferença entre var, let e const
@@ -100,21 +97,21 @@ const = valor constante (não pode ser alterado)
 
 **Exemplo com var**
 
-```
+```javascript
 var x = 10;
 console.log(x);
 ```
 
 **Exemplo com let**
 
-```
+```javascript
 let y = 20;
 console.log(y);
 ```
 
 **Exemplo com const**
 
-```
+```javascript
 const z = 30;
 console.log(z);
 ```
@@ -123,17 +120,17 @@ console.log(z);
 
 ### Escopo global
 
-```
-var a = 1;
+```javascript
+var numeroGlobal = 1;
 
 function teste() {
-   console.log(a);
+   console.log(numeroGlobal);
 }
 ```
 
 ### Escopo de função
 
-```
+```javascript
 function exemplo() {
   let x = 10;
   console.log(x);
@@ -146,7 +143,7 @@ A variável "x" foi criada dentro da função e não pode ser usada fora dela.
 
 ### Escopo de bloco
 
-```
+```javascript
 if (true) {
  let b = 2;
  console.log(b);
@@ -159,7 +156,7 @@ A variável "b" só existe dentro do bloco.
 
 ### Var fora do bloco
 
-```
+```javascript
 var numero = 10;
 if (true) {
  var numero = 20;
@@ -184,14 +181,12 @@ var não respeita escopo de bloco, por isso o valor foi alterado.
 
 ### Comparações
 
-console.log(5 == "5"); // true 
-
-console.log(5 === "5"); // false 
-
-console.log(5 != "5"); // false 
-
-console.log(5 !== "5"); // true
-
+```javascript
+console.log(5 == "5");   // true
+console.log(5 === "5");  // false
+console.log(5 != "5");   // false
+console.log(5 !== "5");  // true
+```
 
 ⤷ **==** compara só o valor, enquanto **===** compara o valor e o tipo também.
 
@@ -209,17 +204,19 @@ console.log(5 !== "5"); // true
 
 if
 
-```
-let idade = 18;
+```javascript
+let idade = 17;
 
 if (idade >= 18) {
-console.log("Maior de idade");
+  console.log("Pode entrar na festa");
+} else {
+  console.log("Não pode entrar");
 }
 ```
 
 if...else
 
-```
+```javascript
 if (idade >= 18) {
   console.log("Maior");
 } else {
@@ -228,15 +225,18 @@ if (idade >= 18) {
 ```
 switch
 
-```
-let cor = "azul";
+```javascript
+let dia = "segunda";
 
-switch (cor) {
-  case "azul":
-    console.log("Cor azul");
+switch (dia) {
+  case "segunda":
+    console.log("Dia de estudar");
+    break;
+  case "sexta":
+    console.log("Sextou");
     break;
   default:
-    console.log("Outra cor");
+    console.log("Dia normal");
 }
 ```
 
@@ -244,7 +244,7 @@ switch (cor) {
 
 for
 
-```
+```javascript
 for (let i = 0; i < 5; i++) {
   console.log(i);
 }
@@ -252,7 +252,7 @@ for (let i = 0; i < 5; i++) {
 
 while
 
-```
+```javascript
 let i = 0;
 
 while (i < 5) {
@@ -265,7 +265,122 @@ while (i < 5) {
 
 ### O que é uma função?
 
+Uma função é um bloco de código reutilizável, que pode ser executado quando necessário.
 
+### Função sem parâmetro
+
+```javascript
+function saudacao() {
+  console.log("Olá!");
+}
+
+saudacao();
+```
+
+### Função com parâmetro
+
+```javascript
+function saudacao(nome) {
+  console.log("Olá, " + nome);
+}
+
+saudacao("Maria");
+```
+
+### Função com retorno
+
+```javascript
+function calcularNota(n1, n2) {
+  return (n1 + n2) / 2;
+}
+
+console.log(calcularNota(7, 9));
+```
+
+## ➤ Manipulação de página (DOM)
+
+꒰ ✉︎ ꒱ Pasta: ``` 08_dom ```
+
+### document
+
+Permite acessar toda a página HTML.
+
+### getElementById()
+
+```javascript
+document.getElementById("titulo").textContent = "Novo texto";
+```
+
+### querySelector()
+
+```javascript
+document.querySelector(".classe").textContent = "Alterado";
+```
+
+### value
+
+```javascript
+let texto = document.getElementById("input").value;
+```
+
+### checked
+
+```javascript
+let marcado = document.getElementById("check").checked;
+```
+
+### textContent
+
+```javascript
+document.getElementById("mensagem").textContent = "Você clicou no botão!";
+```
+
+### style
+
+```javascript
+document.getElementById("p").style.color = "red";
+```
+
+### classList
+
+```javascript
+document.getElementById("p").classList.add("ativo");
+```
+
+### addEventListener()
+
+```javascript
+document.getElementById("btn").addEventListener("click", function() {
+  alert("Clicou!");
+});
+```
+
+## ➤ Adicionais
+
+### querySelectorAll()
+
+```javascript
+document.querySelectorAll("p");
+```
+
+### DOMContentLoaded
+
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("Página carregada");
+});
+```
+
+## ➤ Prints
+
+![Botão funcionando](./01_script_no_html/print.png)
+
+## ➤ Referências
+
+- [W3Schools](https://www.w3schools.com/js/js_intro.asp)
+- [MDN - Operadores](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Math)
+- [MDN - Interatividade](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)
+- Materiais de aula
 
 
 
