@@ -373,7 +373,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## ➤ Prints
 
-![Botão funcionando](./01_script_no_html/print.png)
+### 01 - Script no HTML
+Exemplo de JavaScript inserido diretamente no HTML utilizando o evento onclick.
+
+![Script no HTML](./01_script_no_html/01_script_no_html.png)
+
+### 02 - Script Externo
+Exemplo de JavaScript em arquivo separado, mostrando uma forma mais organizada de uso.
+
+![Script externo](./02_script_externo/02_script_externo.png)
+
+### 03 - Variáveis, Tipos e Escopo
+Demonstração da criação de variáveis e uso de diferentes tipos e escopos no JavaScript.
+
+![Variáveis](./03_variaveis_tipos_escopo/03_variaveis_tipos_escopo.png)
+
+### 04 - Operadores e Comparações
+Exemplo de operadores aritméticos e comparações para manipulação de valores.
+
+![Operadores](./04_operadores_e_comparacoes/04_operadores_e_comparacoes.png)
+
+### 05 - Condicionais
+Exemplo de uso de estruturas condicionais (if/else) para tomada de decisões.
+
+![Condicionais](./05_condicionais/05_condicionais.png)
+
+### 06 - Repetição
+Demonstração de estruturas de repetição (loops) para executar ações várias vezes.
+
+![Repetição](./06_repeticao/06_repeticao.png)
+
+### 07 - Funções
+Exemplo de criação e uso de funções para reutilização de código.
+
+![Funções](./07_funcoes/07_funcoes.png)
+
+### 08 - DOM
+Exemplo de manipulação do DOM para interagir com elementos da página.
+
+![DOM](./08_dom/08_dom.png)
+
 
 ## ➤ Referências
 
